@@ -1,19 +1,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var developersCollectionView: UICollectionView!
-    @IBOutlet weak var pageTitleView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var stackTextView: UITextField!
+    // MARK: Public Instance Properties
     
-    @IBOutlet weak var locationTextView: UITextField!
+    @IBOutlet public weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet public weak var developersCollectionView: UICollectionView!
+    @IBOutlet public weak var locationTextView: UITextField!
+    @IBOutlet public weak var pageTitleView: UIView!
+    @IBOutlet public weak var searchResultLabel: UILabel!
+    @IBOutlet public weak var stackTextView: UITextField!
     
-    @IBOutlet weak var searchResultLabel: UILabel!
-    
-    private var gitHubUsers: [GitHubUser] = []
-    
-    override func viewDidLoad() {
+    // MARK: Public Instance Methods
+    override public func viewDidLoad() {
         super.viewDidLoad()
         developersCollectionView.delegate = self
         developersCollectionView.dataSource = self
@@ -22,10 +21,52 @@ class ViewController: UIViewController {
         stackEntered("")
     }
     
-    @IBAction func stackEntered(_ sender: Any) {
-        stackTextView.resignFirstResponder()
-        locationTextView.resignFirstResponder()
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let githubUser = gitHubUsers[indexPath.row]
+        performSegue(withIdentifier: "listToProfileSegue", sender: githubUser)
+    }
+    
+    @IBAction public func locationEntered(_ sender: Any) {
+
         activityIndicator.startAnimating()
+        var language = stackTextView.text ?? ""
+        var location = locationTextView.text ?? ""
+        language = language.isEmpty ? "JavaScript" : language
+        location = location.isEmpty ? "Lagos": location
+        searchResultLabel.text = "\(language), \(location)"
+        
+        NetworkController.findUsers(language: language, location: location) { (users: [GitHubUser]?) -> Void in
+            
+            if let users = users {
+                self.gitHubUsers = users
+                self.developersCollectionView.reloadData()
+                
+                NetworkController.fetchImages(users: users) { (users: [GitHubUser]?) -> Void in
+                    if let _ = users {
+                        self.activityIndicator.stopAnimating()
+                        self.developersCollectionView.collectionViewLayout.invalidateLayout()
+                    }
+                }
+            }
+        }
+    }
+    
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "listToProfileSegue",
+            sender is GitHubUser?,
+            let destination = segue.destination as? ProfileViewController
+        {
+            let githubUser = sender as? GitHubUser
+            NetworkController.fetchGitHubUser(user: githubUser) { user in
+                let profileController: ProfileViewController = destination
+                profileController.userProfile = user
+            }
+        }
+    }
+    
+    @IBAction public func stackEntered(_ sender: Any) {
+        activityIndicator.startAnimating()
+        
         var language = stackTextView.text ?? ""
         var location = locationTextView.text ?? ""
         language = language.isEmpty ? "JavaScript" : language
@@ -48,31 +89,16 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func locationEntered(_ sender: Any) {
-        stackTextView.resignFirstResponder()
-        locationTextView.resignFirstResponder()
-        activityIndicator.startAnimating()
-        var language = stackTextView.text ?? ""
-        var location = locationTextView.text ?? ""
-        language = language.isEmpty ? "JavaScript" : language
-        location = location.isEmpty ? "Lagos": location
-        searchResultLabel.text = "\(language), \(location)"
-        
-        NetworkController.findUsers(language: language, location: location) { (users: [GitHubUser]?) -> Void in
-            
-            if let users = users {
-                self.gitHubUsers = users
-                self.developersCollectionView.reloadData()
-                NetworkController.fetchImages(users: users) { (users: [GitHubUser]?) -> Void in
-                    if let users = users {
-                        self.activityIndicator.stopAnimating()
-                        self.gitHubUsers = users
-                        self.developersCollectionView.reloadData()
-                    }
-                }
-            }
-        }
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
+    
+    // MARK: Private Instance Properties
+    
+    private var gitHubUsers: [GitHubUser] = []
+    
+    // MARK: Private Instance Methods
+    
     
     private func setUpView() {
         pageTitleView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -80,7 +106,7 @@ class ViewController: UIViewController {
         pageTitleView.layer.shadowRadius = 5
         pageTitleView.layer.shadowOffset = CGSize(width: 3, height: 3)
         pageTitleView.layer.shouldRasterize = true
-
+        
         if let layout = self.developersCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             
             let inset = (view.bounds.width - 310) / 3
@@ -88,27 +114,6 @@ class ViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "listToProfileSegue",
-            sender is GitHubUser?,
-            let destination = segue.destination as? ProfileViewController
-            {
-            let githubUser = sender as? GitHubUser
-                NetworkController.fetchGitHubUser(user: githubUser) { user in
-                    let profileController: ProfileViewController = destination
-                    profileController.userProfile = user
-            }
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let githubUser = gitHubUsers[indexPath.row]
-        performSegue(withIdentifier: "listToProfileSegue", sender: githubUser)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
 }
 
 extension ViewController:  UICollectionViewDelegate, UICollectionViewDataSource  {

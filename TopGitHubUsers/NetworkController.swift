@@ -45,8 +45,10 @@ class NetworkController {
         if let users = users {
             for gitHubUser in users {
                 if let imageUrl = gitHubUser.profileImageURL {
+                    
                     Alamofire.request(imageUrl).responseData(completionHandler: { (response) in
                         if let data = response.data, response.error == nil {
+                            print("Image gotten")
                             gitHubUser.profilePicture = UIImage(data: data)
                         }
                     })
@@ -68,7 +70,7 @@ class NetworkController {
             requestString,
             method: .get,
             parameters: ["include_docs": "true"])
-            .validate()
+            // .validate()
             .responseJSON { (response) in
                 
                 print("User Info:", response)
@@ -88,10 +90,13 @@ class NetworkController {
                 let publicRepos = value["public_repos"]
                 let company = value["company"]
                 let name = value["name"]
+                let location = value["location"]
                 
                 user?.fullName = name as? String
                 user?.bio = userBio as? String
                 user?.publicRepos = publicRepos as? Int
+                user?.location = location as? String
+                
                 completion(user)
         }
         

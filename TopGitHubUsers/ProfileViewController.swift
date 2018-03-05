@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController {
             fullNameLabel.text = userProfile?.fullName
             profileImageView.image = userProfile?.profilePicture
             publicReposLabel.text = "\(userProfile?.publicRepos ?? 0)"
+            locationLabel.text = userProfile?.location
             bioTextView.text = userProfile?.bio
         }
     }
