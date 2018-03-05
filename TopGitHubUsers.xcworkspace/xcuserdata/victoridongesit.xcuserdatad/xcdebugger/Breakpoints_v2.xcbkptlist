@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopGitHubUsers/ProfileViewController.swift"
+            timestampString = "541937377.612352"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "7"
+            endingLineNumber = "7"
+            landmarkName = "ProfileViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopGitHubUsers.ProfileViewController.bioTextView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextView&gt;"
+                  moduleName = "TopGitHubUsers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andeladeveloper/Documents/iOS/TopGitHubUsers/TopGitHubUsers/ProfileViewController.swift"
+                  timestampString = "541937122.7319289"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "79">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopGitHubUsers.ProfileViewController.bioTextView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextView&gt;"
+                  moduleName = "TopGitHubUsers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andeladeveloper/Documents/iOS/TopGitHubUsers/TopGitHubUsers/ProfileViewController.swift"
+                  timestampString = "541937122.734962"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopGitHubUsers.ProfileViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; TopGitHubUsers.ProfileViewController"
+                  moduleName = "TopGitHubUsers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andeladeveloper/Documents/iOS/TopGitHubUsers/TopGitHubUsers/ProfileViewController.swift"
+                  timestampString = "541937122.7377549"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "361">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopGitHubUsers.ProfileViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;TopGitHubUsers.ProfileViewController&gt;"
+                  moduleName = "TopGitHubUsers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andeladeveloper/Documents/iOS/TopGitHubUsers/TopGitHubUsers/ProfileViewController.swift"
+                  timestampString = "541937122.740546"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "274">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopGitHubUsers/ProfileViewController.swift"
+            timestampString = "541937377.612738"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "ProfileViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopGitHubUsers.ProfileViewController.userDetailsView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "TopGitHubUsers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andeladeveloper/Documents/iOS/TopGitHubUsers/TopGitHubUsers/ProfileViewController.swift"
+                  timestampString = "541937364.546615"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "79">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopGitHubUsers.ProfileViewController.userDetailsView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "TopGitHubUsers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andeladeveloper/Documents/iOS/TopGitHubUsers/TopGitHubUsers/ProfileViewController.swift"
+                  timestampString = "541937364.549069"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopGitHubUsers.ProfileViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; TopGitHubUsers.ProfileViewController"
+                  moduleName = "TopGitHubUsers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andeladeveloper/Documents/iOS/TopGitHubUsers/TopGitHubUsers/ProfileViewController.swift"
+                  timestampString = "541937364.552345"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopGitHubUsers.ProfileViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;TopGitHubUsers.ProfileViewController&gt;"
+                  moduleName = "TopGitHubUsers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andeladeveloper/Documents/iOS/TopGitHubUsers/TopGitHubUsers/ProfileViewController.swift"
+                  timestampString = "541937364.554348"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "165">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
